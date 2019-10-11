@@ -11,11 +11,17 @@
 
 <h3>Sample use cases</h3>
 <ol>
-  <li>node liri.js concert-this "artist/band name here"</li>
+  <li>node liri.js concert-this <artist/band name here></li>
+</ol>
+  <ul>Output:</ul>
+  <li>Name of the venue</li> 
+  <li>Venue location</li>
+  <li>Date of the event</li>
+
+<ol>
+  <li>node liri.js spotify-this-song <song name here></li>
 </ol>
   <ul>Output: Name of the venue, Venue location, & Date of the event</ul>
-
-<p>Example command line prompt: node liri.js
 
 
 
