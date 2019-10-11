@@ -1,10 +1,9 @@
 # liri-node-app
 
 
-<h2 class="centered">App Overview</h2>
 
-<h3>Basic app commands</h3>
-<hr>
+<h2>Basic app commands</h2>
+
 <li>concert-this</li>
 <li>spotify-this-song</li>
 <li>movie-this</li>
