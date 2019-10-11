@@ -13,3 +13,11 @@ Include screenshots, gifs or videos of the app functioning
 Contain a link to a deployed version of the app
 Clearly list the technologies used in the app
 State your role in the app development
+
+
+
+<style>
+.centered {
+    text-align: center;
+}
+ </style>
