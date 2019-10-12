@@ -9,7 +9,7 @@
 <li>movie-this</li>
 <li>do-what-it-says</li>
 
-<h3>Sample use cases</h3>
+<h3>Sample use cases (********ADD SCREENSHOTS OF WORKING CODE***********</h3>
 <ol>
   <li>node liri.js concert-this <artist/band name here></li>
   <ul>Output: Name of the venue, Venue location, & Date of the event</ul>
