@@ -48,6 +48,9 @@ for (var i; i < args.length; i++) {
 searchStr = searchArr.join('+');
 // console.log(searchStr);
 
+searchStrSpotify = searchArr.join(' ');
+// console.log(searchStrSpotify);
+
 
 
 
@@ -65,7 +68,10 @@ switch (input) {
 
     case 'spotify-this-song':
         // do something
-        console.log('You chose spotify-this-song');
+        // console.log('You chose spotify-this-song');
+        // call spotify API here
+
+        spotifySearch();
 
         break;
 
@@ -89,6 +95,7 @@ function bandsInTown() {
         .then(function (response) {
 
             var Information = response.data[0];
+            console.log(response);
 
             for (var i = 0; i < response.data.length; i++) {
 
@@ -119,6 +126,41 @@ function bandsInTown() {
                 console.log(error);
             }
         })
+
+}
+
+function spotifySearch() {
+
+    spotify 
+
+        .search({ type: 'track', query: searchStrSpotify })
+        
+        .then(function(response) {
+        
+            // console.log(response.tracks.items.name);
+
+            var artistName = response.tracks.items[0].artists[0].name;
+            var songName = response.tracks.items[0].name;
+            var songLink = response.tracks.items[0].external_urls.spotify;
+            var albumLink = response.tracks.items[0].album.external_urls.spotify;
+
+            console.log('\n');
+            console.log('-------------------------------------------------');
+            console.log(' Artist: ' + artistName.toUpperCase());
+            console.log('-------------------------------------------------');
+            console.log('  Song: ' + songName);
+            console.log('  Link to song: ' + songLink);
+            console.log('  Link to album: ' + albumLink);
+            console.log('\n');
+
+            
+        })
+        
+        .catch(function(err) {
+
+            console.log(err);
+
+        });
 
 }
 
