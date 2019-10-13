@@ -24,6 +24,9 @@
   <ul>Output: Artist(s) name, Song name, Preview link of the song from Spotify, Album the song is on</ul>
   <br>
   
+  <img src="images/command-line-img2.png">
+  
+  
   <br>
   <br>
 
