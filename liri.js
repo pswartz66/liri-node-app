@@ -95,13 +95,13 @@ function bandsInTown() {
         .then(function (response) {
 
             var Information = response.data[0];
-            console.log(response);
+            // console.log(response);
 
             for (var i = 0; i < response.data.length; i++) {
 
                 if (response.data[i].hasOwnProperty('venue')) {
 
-                    console.log('yes');
+                    // console.log('yes');
                     var venueName = Information.venue.name;
                     var VenueLocation = Information.venue.city + ' ' + Information.venue.region;
 
