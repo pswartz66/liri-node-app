@@ -13,9 +13,11 @@
 <ol>
   <li>node liri.js concert-this <artist/band name here></li>
   <ul>Output: Name of the venue, Venue location, & Date of the event</ul>
+  <br>
   <img src="images/command-line-img.png">
   
 
+  <br>
   <br>
   
   <li>node liri.js spotify-this-song <song name here></li>
