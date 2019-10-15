@@ -262,12 +262,12 @@ function doWhatItSays() {
 function logger() {
 
     
-    fs.writeFile('log.txt', '\n' + ': ' + input + ' ' + searchArr.join(' '), function(err) {
+    fs.appendFile('log.txt', '\n' + ': ' + input + ' ' + searchArr.join(' '), function(err) {
 
         if (err) {
             console.log(err)
         }
 
-    })
+    });
 
 }
