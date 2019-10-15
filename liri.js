@@ -6,7 +6,6 @@ var Keys = require('./keys.js');
 var moment = require('./node_modules/moment');
 var Axios = require('./node_modules/axios');
 var Spotify = require('./node_modules/node-spotify-api');
-var beautify = require('./node_modules/js-beautify').js;
 
 var spotify = new Spotify(Keys.spotify);
 
@@ -207,6 +206,7 @@ function movieSearch() {
         console.log('  Country: ' + mCountry);
         console.log('  Language: ' + mLanguage);
         console.log('  Actors: ' + mActors);
+
         console.log('  Plot: ' + mPlot);
         console.log('\n');
 
