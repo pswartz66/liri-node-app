@@ -262,7 +262,7 @@ function doWhatItSays() {
 function logger() {
 
     
-    fs.appendFile('log.txt', '\n' + ': ' + input + ' ' + searchArr.join(' '), function(err) {
+    fs.writeFile('log.txt', 'n\'' + input + ' ' + searchArr.join(' '),'UTF-8', function(err) {
 
         if (err) {
             console.log(err)
