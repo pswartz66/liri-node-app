@@ -6,7 +6,7 @@ var Keys = require('./keys.js');
 var moment = require('./node_modules/moment');
 var Axios = require('./node_modules/axios');
 var Spotify = require('./node_modules/node-spotify-api');
-
+var beautify = require('./node_modules/js-beautify').js;
 
 var spotify = new Spotify(Keys.spotify);
 
@@ -67,8 +67,6 @@ switch (input) {
         break;
 
     case 'spotify-this-song':
-        // do something
-        // console.log('You chose spotify-this-song');
         // call spotify API here
 
         spotifySearch();
@@ -77,7 +75,17 @@ switch (input) {
 
     case 'movie-this':
         // do something
-        console.log('You chose movie-this');
+        // console.log('You chose movie-this');
+
+        if (!process.argv[3]) {
+
+            console.log('Please enter a valid movie title: i.e. <Remember the titans>');
+
+        } else {
+
+            movieSearch();
+
+        }
 
         break;
 
@@ -165,3 +173,49 @@ function spotifySearch() {
 }
 
 
+function movieSearch() {
+
+    Axios.get('http://www.omdbapi.com/?t=' + searchStr + '&y=&plot=short&apikey=trilogy')
+    .then(function(response){
+
+        var mData = response.data;
+
+        var mTitle = mData.Title;
+        var mYear = mData.Year
+        var mIMDBRating = mData.imdbRating;
+
+        var mCountry = mData.Country;
+        var mLanguage = mData.Language
+        var mPlot = mData.Plot;
+        var mActors = mData.Actors;
+
+        var mRottenTomatoes = mData.Ratings;
+
+        for (var i = 0; i < mRottenTomatoes.length; i++) {
+            if (mRottenTomatoes[i].Source === 'Rotten Tomatoes') {
+                var mRottenTomatoesRating = mRottenTomatoes[i].Value;
+            }
+        }
+
+        console.log('\n');
+        console.log('-------------------------------------------------');
+        console.log(' Movie: ' + mTitle.toUpperCase());
+        console.log('-------------------------------------------------');
+        console.log('  Year: ' + mYear);
+        console.log('  IMDB Rating: ' + mIMDBRating);
+        console.log('  Rotten Tomatoes Rating: ' + mRottenTomatoesRating);
+        console.log('  Country: ' + mCountry);
+        console.log('  Language: ' + mLanguage);
+        console.log('  Actors: ' + mActors);
+        console.log('  Plot: ' + mPlot);
+        console.log('\n');
+
+
+    }).catch(function(err) {
+
+        console.log(err)
+   
+    })
+
+
+}
