@@ -6,6 +6,8 @@ var Keys = require('./keys.js');
 var moment = require('./node_modules/moment');
 var Axios = require('./node_modules/axios');
 var Spotify = require('./node_modules/node-spotify-api');
+var fs = require('fs');
+
 
 var spotify = new Spotify(Keys.spotify);
 
@@ -62,13 +64,26 @@ switch (input) {
 
         bandsInTown();
 
-
+        logger();
         break;
 
     case 'spotify-this-song':
         // call spotify API here
 
-        spotifySearch();
+        if (!process.argv[3]) {
+
+            searchStrSpotify = 'Ace of bass';
+            spotifySearch();
+
+            logger();
+
+        } else {
+
+            spotifySearch();
+
+            logger();
+
+        }
 
         break;
 
@@ -84,13 +99,18 @@ switch (input) {
 
             movieSearch();
 
+            logger();
+
         }
 
         break;
 
     case 'do-what-it-says':
         // do something 
-        console.log('You chose do-what-it-says');
+
+        doWhatItSays();
+        
+        logger();
 
         break;
 
@@ -217,5 +237,37 @@ function movieSearch() {
    
     })
 
+
+}
+
+
+function doWhatItSays() {
+
+    fs.readFile('random.txt', 'UTF-8', function(error, data) {
+
+        if (error) {
+            console.log(error);
+
+        }
+
+        console.log(data);
+
+
+    })
+
+}
+
+
+
+function logger() {
+
+    
+    fs.writeFile('log.txt', '\n' + ': ' + input + ' ' + searchArr.join(' '), function(err) {
+
+        if (err) {
+            console.log(err)
+        }
+
+    })
 
 }
