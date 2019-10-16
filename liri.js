@@ -50,7 +50,7 @@ searchStr = searchArr.join('+');
 // console.log(searchStr);
 
 searchStrSpotify = searchArr.join(' ');
-// console.log(searchStrSpotify);
+console.log(searchStrSpotify);
 
 
 
@@ -81,7 +81,7 @@ switch (input) {
 
             spotifySearch();
 
-            logger();
+            // logger();
 
         }
 
@@ -154,6 +154,7 @@ function bandsInTown() {
             }
         })
 
+
 }
 
 function spotifySearch() {
@@ -188,6 +189,10 @@ function spotifySearch() {
             console.log(err);
 
         });
+
+        logger();
+        
+
 
 }
 
@@ -258,15 +263,41 @@ function doWhatItSays() {
 }
 
 
+fs.appendFile('log.txt', 'hello', 'UTF-8', function(err, response) {
+
+    if (err) {
+        console.log(err);
+    }
+
+    console.log(response);
+
+
+});
+
 
 function logger() {
 
     
-    fs.writeFile('log.txt', 'n\'' + input + ' ' + searchArr.join(' '),'UTF-8', function(err) {
+    fs.appendFile('log.txt', 'hello', 'UTF-8', function(err, response) {
+
+        if (err) {
+            console.log(err);
+        }
+
+        console.log(response);
+
+
+    });
+
+
+    fs.appendFile('log.txt', '\n' + input + ' ' + searchArr.join(' '),'UTF-8', function(err, response) {
 
         if (err) {
             console.log(err)
         }
+
+
+        console.log(response);
 
     });
 
