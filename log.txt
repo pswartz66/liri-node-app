@@ -21,3 +21,5 @@ spotify-this-song smells like teen spirithellohello
 spotify-this-song everlonghello
 spotify-this-song fridayhellohellohello
 spotify-this-song fridayhello
+spotify-this-song smells like teen spirit
+spotify-this-song everlong
