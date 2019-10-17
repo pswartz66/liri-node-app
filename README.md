@@ -8,8 +8,8 @@
 
 <h4>To get started<h4>
  <ol>
-  <li>git clone <this repo></li>
-  <li>run npm install</li>
+  <li>git clone this repo</li>
+  <li>npm install</li>
  </ol>
   
 <h2>Basic app commands</h2>
