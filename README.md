@@ -7,9 +7,11 @@
 <li>dotenv</li>
 
 <h4>To get started<h4>
-  <li>git clone "'"this repo"'"</li>
+ <ol>
+  <li>git clone <this repo></li>
   <li>run npm install</li>
-
+ </ol>
+  
 <h2>Basic app commands</h2>
 
 <li>concert-this</li>
