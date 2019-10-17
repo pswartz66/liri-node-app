@@ -6,8 +6,9 @@
 <li>node-spotify-api</li>
 <li>dotenv</li>
 
-<h4>Once you've run <git clone 'this repo'> <h4>
-  <p>run npm install</p>
+<h4>To get started<h4>
+  <li>git clone "'"this repo"'"</li>
+  <li>run npm install</li>
 
 <h2>Basic app commands</h2>
 
