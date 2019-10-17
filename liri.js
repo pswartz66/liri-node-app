@@ -47,16 +47,13 @@ for (var i; i < args.length; i++) {
 }
 
 searchStr = searchArr.join('+');
-// console.log(searchStr);
 
 searchStrSpotify = searchArr.join(' ');
-// console.log(searchStrSpotify);
-
-
 
 
 // third arg in argv arguments
 var input = process.argv[2];
+
 
 switch (input) {
     case 'concert-this':
@@ -81,15 +78,13 @@ switch (input) {
 
             spotifySearch();
 
-            // logger();
-
         }
 
         break;
 
     case 'movie-this':
-        // do something
-        // console.log('You chose movie-this');
+        
+        // call OMDB api 
 
         if (!process.argv[3]) {
 
@@ -106,7 +101,8 @@ switch (input) {
         break;
 
     case 'do-what-it-says':
-        // do something 
+
+        // process random.txt file
 
         doWhatItSays();
         
@@ -122,13 +118,11 @@ function bandsInTown() {
         .then(function (response) {
 
             var Information = response.data[0];
-            // console.log(response);
 
             for (var i = 0; i < response.data.length; i++) {
 
                 if (response.data[i].hasOwnProperty('venue')) {
 
-                    // console.log('yes');
                     var venueName = Information.venue.name;
                     var VenueLocation = Information.venue.city + ' ' + Information.venue.region;
 
@@ -164,8 +158,6 @@ function spotifySearch() {
         .search({ type: 'track', query: searchStrSpotify })
         
         .then(function(response) {
-        
-            // console.log(response.tracks.items.name);
 
             var artistName = response.tracks.items[0].artists[0].name;
             var songName = response.tracks.items[0].name;
@@ -192,7 +184,6 @@ function spotifySearch() {
 
         logger();
         
-
 
 }
 
@@ -263,9 +254,6 @@ function doWhatItSays() {
 }
 
 
-
-
-
 function logger() {
 
 
@@ -276,7 +264,7 @@ function logger() {
         }
 
 
-        console.log(response);
+        // console.log(response);
 
     });
 

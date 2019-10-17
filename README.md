@@ -32,11 +32,23 @@
 
   <li>node liri.js movie-this <movie name here></li>
   <ul>Output: Title, Year, IMDB Rating, Rotten Tomatoes Rating, Country, Language, Plot, Actors</ul>
-  
+  <br>
+
+  <img src="images/command-line-img3.png">
+
+  <br>
   <br>
 
   <li>node liri.js do-what-it-says</li>
   <ul>Output: will display random text</ul>
+
+  <br>
+  
+  <img src="images/command-line-img4.png">
+  
+  <br>
+  <br>
+
 
 </ol>
 
