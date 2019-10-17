@@ -1,5 +1,6 @@
 # liri-node-app
 
+<h3>This project includes the following node dependencies</h3>
 
 
 <h2>Basic app commands</h2>
